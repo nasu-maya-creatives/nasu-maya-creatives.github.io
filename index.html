@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Nasu MAYA Creatives 合同会社 — コーポレートサイト雛形</title>
+		<meta name="description" content="Nasu MAYA Creatives 合同会社の紹介用雛形サイト。ヒーロー、サービス、会社概要、問い合わせを含むレスポンシブテンプレート。" />
+		<link rel="stylesheet" href="styles/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="#">Nasu MAYA Creatives 合同会社</a>
+				<button class="nav-toggle" aria-expanded="false" aria-controls="nav">メニュー</button>
+				<nav id="nav" class="site-nav" hidden>
+					<ul>
+						<li><a href="#services">サービス</a></li>
+						<li><a href="#about">会社概要</a></li>
+						<li><a href="#contact">お問い合わせ</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="container">
+					<h1>信頼されるパートナーとして、価値を創造します</h1>
+					<p class="lead">私たちは専門性と情熱で、御社の課題を解決します。</p>
+					<p><a class="btn" href="#contact">お問い合わせ</a></p>
+				</div>
+			</section>
+
+			<section id="services" class="services container">
+				<h2>サービス</h2>
+				<div class="grid">
+					<article class="card">
+						<h3>コンサルティング</h3>
+						<p>ビジネス課題解決のための戦略立案と実行支援。</p>
+					</article>
+					<article class="card">
+						<h3>開発</h3>
+						<p>要件に合わせたシステム・Webサービスの設計・開発。</p>
+					</article>
+					<article class="card">
+						<h3>運用サポート</h3>
+						<p>導入後の安定運用と改善提案を行います。</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="about" class="about container">
+				<h2>会社概要</h2>
+				<p>所在地、設立年、事業内容などの簡単な紹介文をここに入れてください。</p>
+			</section>
+
+			<section id="contact" class="contact container">
+				<h2>お問い合わせ</h2>
+				<form id="contactForm">
+					<!-- Honeypot: bots will fill this but humans won't. Leave off-screen via CSS -->
+					<label class="hidden-field">電話（未入力で送信）<input type="text" name="phone_hp" autocomplete="off" tabindex="-1"></label>
+
+					<label>会社名（任意）<input type="text" name="company"></label>
+					<label>お名前<input type="text" name="name" required></label>
+					<label>メールアドレス<input type="email" name="email" required></label>
+					<label>メッセージ<textarea name="message" rows="5" required></textarea></label>
+					<button type="submit" class="btn">送信</button>
+				</form>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<small>© Nasu MAYA Creatives 合同会社. All rights reserved.</small>
+			</div>
+		</footer>
+
+		<script src="scripts/main.js" defer></script>
+	</body>
+</html>
