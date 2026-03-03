@@ -1,6 +1,6 @@
 /* Basic responsive styles for company template */
 :root{
-  --bg:#f9fafb; --fg:#111827; --accent:#0ea5a4; --muted:#6b7280;
+  --bg:#eef7f2; --fg:#0f1724; --accent:#2f8f6b; --muted:#4b5563;
   --container:1100px;
 }
 *{box-sizing:border-box}
@@ -11,16 +11,37 @@ html,body{height:100%;margin:0;font-family: -apple-system,BlinkMacSystemFont,"Se
 .nav-toggle{display:none;background:none;border:1px solid #ddd;padding:.5rem 0.75rem;border-radius:6px}
 .site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 .site-nav a{text-decoration:none;color:var(--fg)}
-.hero{background:linear-gradient(180deg,white, #f3f4f6);padding:4rem 0;text-align:center}
-.hero h1{margin:0;font-size:1.8rem}
+.hero{position:relative;overflow:hidden;padding:5rem 0 6rem;text-align:center;background:linear-gradient(180deg,#a8d9ed,#c8e6f0,#eef7f2)}
+/* 遠い山：薄いグレー系 */
+.hero::before{content:"";position:absolute;left:-5%;bottom:0;width:110%;height:40%;background:linear-gradient(180deg,rgba(230,235,240,0.6),rgba(200,215,225,0.8));clip-path:polygon(0 80%,8% 72%,15% 78%,25% 65%,35% 75%,48% 60%,62% 72%,75% 58%,88% 70%,100% 65%,100% 100%,0 100%);z-index:0}
+/* 中間の山：薄いグリーン */
+.hero::after{content:"";position:absolute;left:-8%;bottom:0;width:116%;height:45%;background:linear-gradient(180deg,rgba(150,200,180,0.7),rgba(100,170,150,0.85));clip-path:polygon(0 75%,6% 68%,12% 72%,20% 60%,32% 70%,45% 55%,58% 68%,72% 52%,85% 65%,95% 60%,100% 70%,100% 100%,0 100%);z-index:1}
+.hero h1{margin:0;font-size:2rem;position:relative;z-index:3}
+.hero .lead{position:relative;z-index:3}
+.hero .btn{position:relative;z-index:3}
+/* 手前の山：濃いグリーン系（スノー効果） */
+.hero .container::before{content:"";position:absolute;left:-10%;bottom:0;right:-10%;height:50%;background:linear-gradient(180deg,rgba(60,130,100,0.8),rgba(35,95,70,0.95));clip-path:polygon(0 85%,4% 78%,10% 82%,18% 72%,28% 80%,40% 68%,54% 78%,68% 65%,80% 75%,92% 70%,98% 78%,100% 85%,100% 100%,0 100%);z-index:2;pointer-events:none}
+/* スノー/光の効果 */
+.hero .container::after{content:"";position:absolute;left:0;bottom:30%;right:0;height:3px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.15),transparent);z-index:2;pointer-events:none}
+/* 会社概要セクションに薄い土色の背景を設定 */
+.about{position:relative;padding:3rem 2rem;background:#F5EFE6;color:var(--fg)}
+.about > *{position:relative;z-index:2}
+
+/* 全体の画像を中央揃えにする（カード内やコンテンツ内のimgに適用） */
+img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
 .lead{color:var(--muted);margin-top:.5rem}
 .btn{display:inline-block;background:var(--accent);color:white;padding:.6rem 1rem;border-radius:8px;text-decoration:none}
 .services{padding:3rem 0}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.card{background:white;padding:1.2rem;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
-.about{padding:2rem 0}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(248,253,250,0.95));padding:1.4rem;border-radius:12px;border-left:6px solid rgba(47,143,107,0.12);box-shadow:0 6px 18px rgba(15,23,36,0.06);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(15,23,36,0.12)}
+.card h3{color:var(--fg);margin-top:0}
+
 .contact label{display:block;margin-bottom:.75rem}
 .contact input,.contact textarea{width:100%;padding:.6rem;border:1px solid #e5e7eb;border-radius:6px}
+.brand{color:var(--accent)}
+.btn{background:var(--accent);box-shadow:0 6px 14px rgba(47,143,107,0.18)}
+.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
 .site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
 /* Honeypot off-screen so humans don't see it but bots might fill it */
 .hidden-field{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
