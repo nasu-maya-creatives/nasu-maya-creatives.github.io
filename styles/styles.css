@@ -42,6 +42,9 @@ img{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
 .brand{color:var(--accent)}
 .btn{background:var(--accent);box-shadow:0 6px 14px rgba(47,143,107,0.18)}
 .btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+.qr-section{padding:3rem 2rem;text-align:center;background:var(--bg)}
+#qrcode{display:inline-block;margin:1.5rem auto}
+#qrcode img{margin:0 auto}
 .site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
 /* Honeypot off-screen so humans don't see it but bots might fill it */
 .hidden-field{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}

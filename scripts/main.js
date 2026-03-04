@@ -10,6 +10,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 
+  // Generate QR code for site URL
+  const qrContainer = document.getElementById('qrcode');
+  if(qrContainer && typeof QRCode !== 'undefined'){
+    new QRCode(qrContainer, {
+      text: 'https://nasu-maya-creatives.github.io',
+      width: 150,
+      height: 150,
+      colorDark: '#0f1724',
+      colorLight: '#eef7f2',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  }
+
   const form = document.getElementById('contactForm');
   if(form){
     form.addEventListener('submit', (e)=>{
